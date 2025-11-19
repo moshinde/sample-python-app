@@ -1,10 +1,11 @@
-from flask import Flask
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route('/')
-def home():
-    return "Hello World from Azure VM!"
+@app.get("/")
+def root():
+    return {"message": "API deployed successfully!"}
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+@app.get("/api/data")
+def get_data():
+    return {"value": 100, "status": "OK"}
