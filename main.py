@@ -4,8 +4,8 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "API deployed successfully!"}
+    return {"message": "App deployed using App Service Build"}
 
 @app.get("/api/data")
 def get_data():
-    return {"value": 100, "status": "OK"}
+    return {"status": "success", "value": 1234}
